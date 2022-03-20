@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import SHOES from "./shose.jpg";
 
 const Common = styled.div`
   display: flex;
@@ -18,15 +17,31 @@ const Home = styled.div`
   font-weight: bold;
 `;
 
-const Logo = styled.img`
+const Logo = styled.div`
   width: 100px;
+`;
+
+const ControlBox = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Controller = styled.div`
+  margin: 10px;
+  text-decoration: none;
+  color: black;
 `;
 
 const Nav = () => {
   return (
     <Common>
       <Home href="/">ShoeMar</Home>
-      <Logo src={SHOES} />
+      <Logo>슈마</Logo>
+      <ControlBox>
+        <Controller>계약</Controller>
+        <Controller>로그인</Controller>
+        <Controller>회원가입</Controller>
+      </ControlBox>
     </Common>
   );
 };
