@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import LogoImg from "./shose.png";
+import SHOES from "./shose.jpg";
+
 const Common = styled.div`
   display: flex;
   justify-content: space-between;
@@ -25,7 +26,7 @@ const Nav = () => {
   return (
     <Common>
       <Home href="/">ShoeMar</Home>
-      <Logo src={LogoImg} />
+      <Logo src={SHOES} />
     </Common>
   );
 };
