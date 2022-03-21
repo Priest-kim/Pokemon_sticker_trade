@@ -1,10 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { IoIosMenu } from "react-icons/io";
 
 const Common = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 20px;
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+  }
 `;
 
 const Home = styled.div`
@@ -15,6 +19,9 @@ const Home = styled.div`
   text-decoration: none;
   color: lightgreen;
   font-weight: bold;
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const Logo = styled.div`
@@ -24,9 +31,26 @@ const Logo = styled.div`
 const ControlBox = styled.div`
   display: flex;
   align-items: center;
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    align-items: flex-end;
+    display: none;
+  }
 `;
 
-const Controller = styled.div`
+const MenuBar = styled.a`
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  position: absolute;
+  right: 32px;
+  height: 97px;
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+`;
+
+const Controller = styled.a`
   margin: 10px;
   text-decoration: none;
   color: black;
@@ -42,6 +66,9 @@ const Nav = () => {
         <Controller>로그인</Controller>
         <Controller>회원가입</Controller>
       </ControlBox>
+      <MenuBar>
+        <IoIosMenu />
+      </MenuBar>
     </Common>
   );
 };
