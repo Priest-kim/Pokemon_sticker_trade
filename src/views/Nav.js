@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { IoIosMenu } from "react-icons/io";
 
@@ -11,7 +11,7 @@ const Common = styled.div`
   }
 `;
 
-const Home = styled.div`
+const Home = styled.a`
   display: flex;
   align-items: center;
   font-size: 30px;
@@ -34,7 +34,9 @@ const ControlBox = styled.div`
   @media screen and (max-width: 500px) {
     flex-direction: column;
     align-items: flex-end;
-    display: none;
+    display: ${({ menu }) => {
+      return menu === false ? "none" : "flex";
+    }};
   }
 `;
 
@@ -45,7 +47,7 @@ const MenuBar = styled.a`
   position: absolute;
   right: 32px;
   height: 97px;
-  @media screen and (max-width: 500px) {
+  @media screen and (min-width: 500px) {
     display: none;
   }
 `;
@@ -57,17 +59,22 @@ const Controller = styled.a`
 `;
 
 const Nav = () => {
+  const [menu, setMenu] = useState(false);
   return (
     <Common>
       <Home href="/">ShoeMar</Home>
       <Logo>슈마</Logo>
       <ControlBox>
-        <Controller>계약</Controller>
-        <Controller>로그인</Controller>
-        <Controller>회원가입</Controller>
+        <Controller href="/login">로그인</Controller>
+        <Controller href="/signup">회원가입</Controller>
       </ControlBox>
-      <MenuBar>
-        <IoIosMenu />
+      <MenuBar
+        href="#"
+        onClick={() => {
+          setMenu(!menu);
+        }}
+      >
+        <IoIosMenu></IoIosMenu>
       </MenuBar>
     </Common>
   );

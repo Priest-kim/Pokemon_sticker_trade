@@ -1,9 +1,9 @@
-import Nav from "./views/Nav";
+import ShoeTamplate from "./views/ShoeTemplate";
 
 function App() {
   return (
     <div className="App">
-      <Nav />
+      <ShoeTamplate />
     </div>
   );
 }
