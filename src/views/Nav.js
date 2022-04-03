@@ -7,7 +7,6 @@ const Common = styled.div`
   justify-content: space-between;
   margin: 20px;
   border: 1px solid lightgreen;
-  width: 700px;
   border-radius: 15px;
   @media screen and (max-width: 500px) {
     flex-direction: column;
@@ -34,25 +33,14 @@ const Logo = styled.div`
 const ControlBox = styled.div`
   display: flex;
   align-items: center;
-  @media screen and (max-width: 500px) {
-    flex-direction: column;
-    align-items: flex-end;
-    display: ${({ menu }) => {
-      return menu === false ? "none" : "flex";
-    }};
-  }
 `;
 
-const MenuBar = styled.a`
+const MenuBar = styled.div`
   display: flex;
   align-items: center;
   font-size: 30px;
-  /* position: absolute; */
   right: 32px;
-  /* height: 97px; */
-  @media screen and (min-width: 500px) {
-    /* display: none; */
-  }
+  margin-right: 10px;
 `;
 
 const Controller = styled.a`
@@ -72,11 +60,12 @@ const Nav = () => {
       <Home href="/">ShoeMar</Home>
       <Logo>슈마</Logo>
       <ControlBox>
-        <Controller>로그인</Controller>
+        <Controller> </Controller>
         <MenuBar
           href="#"
-          onClick={() => {
+          onMouseOver={() => {
             setMenu(!menu);
+            console.log(menu);
           }}
         >
           <IoIosMenu />

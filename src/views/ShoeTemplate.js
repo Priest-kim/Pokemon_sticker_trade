@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Nav from "./Nav";
 
 const Tamplate = styled.div`
-  width: 700px;
+  width: 1500px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 2rem;
