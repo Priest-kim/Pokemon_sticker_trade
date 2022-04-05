@@ -25,11 +25,11 @@ const menuList = [
 
 const toggleList = [
   {
-    id: "_3",
+    id: "1",
     name: "Github",
   },
   {
-    id: "_4",
+    id: "2",
     name: "Notion",
   },
 ];
