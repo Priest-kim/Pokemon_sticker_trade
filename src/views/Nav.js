@@ -36,7 +36,6 @@ const toggleList = [
 
 const Nav = () => {
   const [isToggle, setisToggle] = useState(false);
-  const list = [...menuList, ...toggleList];
   return (
     <>
       <NavBar>
@@ -77,11 +76,19 @@ const Nav = () => {
             </Img>
             <Input type="text" placeholder="search" />
           </Search>
-
-          {list.map((menu) => (
+          {menuList.map((menu) => (
             <List key={menu.id}>
               <Item href="/#" fontSize="30px">
                 {menu.name}
+              </Item>
+              <hr />
+            </List>
+          ))}
+          <Contact>Contact me</Contact>
+          {toggleList.map((item) => (
+            <List key={item.id}>
+              <Item href="/#" fontSize="30px">
+                {item.name}
               </Item>
               <hr />
             </List>
@@ -169,4 +176,12 @@ const Img = styled.div`
   top: 10px;
   right: 12px;
   margin-right: 10px;
+`;
+
+const Contact = styled.div`
+  margin-top: 60px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
 `;
