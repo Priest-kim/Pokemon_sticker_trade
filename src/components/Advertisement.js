@@ -1,5 +1,10 @@
 import styled from "styled-components";
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCircleArrowRight,
+  faCircleArrowLeft,
+} from "@fortawesome/free-solid-svg-icons";
 
 const adList = [
   {
@@ -47,11 +52,11 @@ const Advertisement = () => {
         onPointerOut={showArrowOnBanner}
       >
         <Button onClick={imgChangeRight} isDisplay={isDisplay}>
-          감소
+          <FontAwesomeIcon icon={faCircleArrowLeft} size="2x" />
         </Button>
         {ad.img}
         <Button onClick={imgChangeLeft} isDisplay={isDisplay}>
-          증가
+          <FontAwesomeIcon icon={faCircleArrowRight} size="2x" />
         </Button>
       </MainBanner>
     </Container>
@@ -68,7 +73,14 @@ const Container = styled.div`
   justify-content: center;
 `;
 
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+`;
+
 const MainBanner = styled.div`
+  margin: 0 auto;
+  overflow: hidden;
   display: flex;
   background-color: lightcoral;
   width: 900px;
@@ -79,6 +91,11 @@ const MainBanner = styled.div`
   }
 `;
 
-const Button = styled.button`
-  display: ${({ isDisplay }) => (isDisplay ? "block" : "none")};
+const Button = styled.label`
+  z-index: 10;
+  display: ${({ isDisplay }) => (isDisplay ? "" : "none")};
+  background-color: coral;
+  padding-left: 30px;
+  padding-top: 73px;
+  padding-right: 30px;
 `;
