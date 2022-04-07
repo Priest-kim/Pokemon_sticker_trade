@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import React, { useEffect, useRef, useState } from "react";
-import img1 from "./../../images/1.png";
 import SlideItem from "./Advertisment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,8 +8,27 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import useInterval from "../../hooks/useInterval";
 
+const adList = [
+  {
+    id: 0,
+    img: "Constto",
+  },
+  {
+    id: 1,
+    img: "Benedicta",
+  },
+  {
+    id: 2,
+    img: "Slime",
+  },
+  {
+    id: 3,
+    img: "CocaCola",
+  },
+];
+
 const Slider = () => {
-  const TOTAL_SLIDES = 3; // 전체 슬라이드 배열 의 length 지만 마지막인덱스를 위해 -1
+  const TOTAL_SLIDES = adList.length - 1; // 전체 슬라이드 배열 의 length 지만 마지막인덱스를 위해 -1
   const [curSlide, setCurSlide] = useState(0); // 현재 슬라이드의 값
   const slideRef = useRef(null);
 
@@ -38,7 +56,6 @@ const Slider = () => {
 
   const showArrowOnBanner = () => {
     setIsDisplay(!isDisplay);
-    console.log(isDisplay);
   };
 
   useEffect(() => {
@@ -47,7 +64,7 @@ const Slider = () => {
   }, [curSlide]);
 
   useInterval(() => {
-    setCurSlide((curSlide) => curSlide + 1);
+    NextSlide();
   }, 5000);
 
   return (
@@ -60,10 +77,9 @@ const Slider = () => {
           <FontAwesomeIcon icon={faCircleArrowRight} size="2x" />
         </RightArrow>
         <BoxList ref={slideRef}>
-          <SlideItem img={img1} />
-          <SlideItem img={img1} />
-          <SlideItem img={img1} />
-          <SlideItem img={img1} />
+          {adList.map((ad) => (
+            <SlideItem ad={ad} key={ad.id} />
+          ))}
         </BoxList>
         <LeftArrow onClick={PrevSlide} isDisplay={isDisplay}>
           <FontAwesomeIcon icon={faCircleArrowLeft} size="2x" />

@@ -1,10 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-const SlideItem = ({ img }) => {
+const SlideItem = ({ ad }) => {
   return (
     <Box>
-      <img src={img} alt="shose" />
+      {/* <img src={img} alt="shose" /> */}
+      <div>
+        {ad.id + 1} <br />
+        {ad.img}
+      </div>
     </Box>
   );
 };
@@ -12,7 +16,9 @@ const SlideItem = ({ img }) => {
 export default SlideItem;
 
 const Box = styled.div`
-  > img {
+  > div {
+    padding-top: 40px;
+    font-size: 4rem;
     height: 300px;
     width: 900px;
     background-color: lightcoral;
