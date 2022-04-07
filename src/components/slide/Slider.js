@@ -1,19 +1,20 @@
 import styled from "styled-components";
 import React, { useEffect, useRef, useState } from "react";
-import img1 from "./../images/1.png";
-import img2 from "./../images/2.png";
-import img3 from "./../images/3.png";
+import img1 from "./../../images/1.png";
+import SlideItem from "./Advertisment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleArrowRight,
   faCircleArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
-import SlideItem from "./SlideItem";
+import useInterval from "../../hooks/useInterval";
 
 const Slider = () => {
   const TOTAL_SLIDES = 3; // 전체 슬라이드 배열 의 length 지만 마지막인덱스를 위해 -1
   const [curSlide, setCurSlide] = useState(0); // 현재 슬라이드의 값
   const slideRef = useRef(null);
+
+  const [isDisplay, setIsDisplay] = useState(false);
 
   const NextSlide = () => {
     if (curSlide >= TOTAL_SLIDES) {
@@ -35,24 +36,36 @@ const Slider = () => {
     }
   };
 
+  const showArrowOnBanner = () => {
+    setIsDisplay(!isDisplay);
+    console.log(isDisplay);
+  };
+
   useEffect(() => {
     slideRef.current.style.transition = "all 0.5s ease-in-out";
     slideRef.current.style.transform = `translateX(-${curSlide}00%)`;
   }, [curSlide]);
 
+  useInterval(() => {
+    setCurSlide((curSlide) => curSlide + 1);
+  }, 5000);
+
   return (
     <SlideDiv>
-      <SlideContent>
-        <RightArrow onClick={NextSlide}>
+      <SlideContent
+        onPointerOver={showArrowOnBanner}
+        onPointerOut={showArrowOnBanner}
+      >
+        <RightArrow onClick={NextSlide} isDisplay={isDisplay}>
           <FontAwesomeIcon icon={faCircleArrowRight} size="2x" />
         </RightArrow>
         <BoxList ref={slideRef}>
           <SlideItem img={img1} />
-          <SlideItem img={img2} />
-          <SlideItem img={img3} />
-          <SlideItem img={img3} />
+          <SlideItem img={img1} />
+          <SlideItem img={img1} />
+          <SlideItem img={img1} />
         </BoxList>
-        <LeftArrow onClick={PrevSlide}>
+        <LeftArrow onClick={PrevSlide} isDisplay={isDisplay}>
           <FontAwesomeIcon icon={faCircleArrowLeft} size="2x" />
         </LeftArrow>
       </SlideContent>
@@ -89,14 +102,17 @@ const BoxList = styled.div`
 `;
 
 const LeftArrow = styled.div`
+  display: ${({ isDisplay }) => (isDisplay ? "" : "none")};
   position: absolute;
   top: 45%;
   left: 30px;
+  right: 0px;
   cursor: pointer;
   width: 30px;
   height: 30px;
 `;
 const RightArrow = styled.div`
+  display: ${({ isDisplay }) => (isDisplay ? "" : "none")};
   z-index: 1;
   position: absolute;
   top: 45%;
