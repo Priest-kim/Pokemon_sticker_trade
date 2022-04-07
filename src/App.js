@@ -1,12 +1,13 @@
-import Advertisement from "./components/Advertisement";
 import Nav from "./layout/Nav";
-import Slider from "./components/Slider";
+import SliderComponent from "./components/SliderComponent";
+import ItemList from "./components/ItemList";
 
 function App() {
   return (
     <>
       <Nav />
-      <Slider />
+      <SliderComponent />
+      <ItemList />
     </>
   );
 }

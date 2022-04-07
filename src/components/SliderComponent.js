@@ -8,7 +8,7 @@ import {
   faCircleArrowRight,
   faCircleArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
-import SlideItem from "./Slide";
+import SlideItem from "./SlideItem";
 
 const Slider = () => {
   const TOTAL_SLIDES = 3; // 전체 슬라이드 배열 의 length 지만 마지막인덱스를 위해 -1
@@ -69,6 +69,10 @@ const SlideDiv = styled.div`
   background-color: black;
   color: white;
   text-align: center;
+
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
 `;
 
 const SlideContent = styled.div`
