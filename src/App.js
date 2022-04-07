@@ -1,13 +1,13 @@
 import Advertisement from "./components/Advertisement";
 import Nav from "./layout/Nav";
-import Slider from "./Slider";
+import Slider from "./components/Slider";
 
 function App() {
   return (
-    <div>
+    <>
       <Nav />
       <Slider />
-    </div>
+    </>
   );
 }
 
