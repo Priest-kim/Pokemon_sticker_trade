@@ -7,6 +7,7 @@ import {
   faCircleArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import useInterval from "../../hooks/useInterval";
+import { width } from "@mui/system";
 
 const adList = [
   {
@@ -31,7 +32,6 @@ const Slider = () => {
   const TOTAL_SLIDES = adList.length - 1; // 전체 슬라이드 배열 의 length 지만 마지막인덱스를 위해 -1
   const [curSlide, setCurSlide] = useState(0); // 현재 슬라이드의 값
   const slideRef = useRef(null);
-  const 양끝_추가될_베너_갯수 = 1;
 
   const [isDisplay, setIsDisplay] = useState(false);
 
@@ -64,21 +64,9 @@ const Slider = () => {
     slideRef.current.style.transform = `translateX(-${curSlide}00%)`;
   }, [curSlide]);
 
-  useInterval(() => {
-    NextSlide();
-  }, 5000);
-
-  function setSlides() {
-    let addedFront = [];
-    let addedLast = [];
-    var index = 0;
-    while (index < 양끝_추가될_베너_갯수) {
-      addedLast.push(adList[index % adList.length]);
-      addedFront.unshift(adList[adList.length - 1 - (index % adList.length)]);
-      index++;
-    }
-    return [...addedFront, ...adList, ...addedLast];
-  }
+  // useInterval(() => {
+  //   NextSlide();
+  // }, 5000);
 
   return (
     <SlideDiv>
@@ -90,9 +78,9 @@ const Slider = () => {
           <FontAwesomeIcon icon={faCircleArrowRight} size="2x" />
         </RightArrow>
         <BoxList ref={slideRef}>
-          {adList.map((ad) => (
-            <SlideItem ad={ad} key={ad.id} />
-          ))}
+          {adList.map((ad, idx) => {
+            return <SlideItem ad={ad} key={idx} />;
+          })}
         </BoxList>
         <LeftArrow onClick={PrevSlide} isDisplay={isDisplay}>
           <FontAwesomeIcon icon={faCircleArrowLeft} size="2x" />
@@ -119,7 +107,6 @@ const SlideDiv = styled.div`
 
 const SlideContent = styled.div`
   margin: 0 auto;
-
   overflow: hidden;
   position: relative;
   height: 100%;
@@ -127,6 +114,7 @@ const SlideContent = styled.div`
 `;
 
 const BoxList = styled.div`
+  margin: 0 auto;
   display: flex;
 `;
 

@@ -17,7 +17,7 @@ export default SlideItem;
 
 const Box = styled.div`
   > div {
-    padding-top: 40px;
+    padding-top: 30px;
     font-size: 4rem;
     height: 300px;
     width: 900px;
