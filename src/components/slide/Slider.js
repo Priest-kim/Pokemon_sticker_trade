@@ -31,6 +31,7 @@ const Slider = () => {
   const TOTAL_SLIDES = adList.length - 1; // 전체 슬라이드 배열 의 length 지만 마지막인덱스를 위해 -1
   const [curSlide, setCurSlide] = useState(0); // 현재 슬라이드의 값
   const slideRef = useRef(null);
+  const 양끝_추가될_베너_갯수 = 1;
 
   const [isDisplay, setIsDisplay] = useState(false);
 
@@ -66,6 +67,18 @@ const Slider = () => {
   useInterval(() => {
     NextSlide();
   }, 5000);
+
+  function setSlides() {
+    let addedFront = [];
+    let addedLast = [];
+    var index = 0;
+    while (index < 양끝_추가될_베너_갯수) {
+      addedLast.push(adList[index % adList.length]);
+      addedFront.unshift(adList[adList.length - 1 - (index % adList.length)]);
+      index++;
+    }
+    return [...addedFront, ...adList, ...addedLast];
+  }
 
   return (
     <SlideDiv>
