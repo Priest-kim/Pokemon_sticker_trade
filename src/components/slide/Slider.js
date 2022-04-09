@@ -1,30 +1,39 @@
 import styled from "styled-components";
 import React, { useEffect, useRef, useState } from "react";
 import SlideItem from "./Advertisment";
+import img from "./../../images/1.png";
+import useInterval from "../../hooks/useInterval";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleArrowRight,
   faCircleArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
-import useInterval from "../../hooks/useInterval";
-import { width } from "@mui/system";
 
 const adList = [
   {
     id: 0,
     img: "Constto",
+    path: "1",
   },
   {
     id: 1,
     img: "Benedicta",
+    path: "1",
   },
   {
     id: 2,
     img: "Slime",
+    path: "1",
   },
   {
     id: 3,
     img: "CocaCola",
+    path: "1",
+  },
+  {
+    id: 4,
+    img: "King of Mongta",
+    path: "1",
   },
 ];
 
@@ -64,9 +73,9 @@ const Slider = () => {
     slideRef.current.style.transform = `translateX(-${curSlide}00%)`;
   }, [curSlide]);
 
-  useInterval(() => {
-    NextSlide();
-  }, 3000);
+  // useInterval(() => {
+  //   NextSlide();
+  // }, 3000);
 
   return (
     <SlideDiv>
@@ -79,7 +88,7 @@ const Slider = () => {
         </RightArrow>
         <BoxList ref={slideRef}>
           {adList.map((ad, idx) => {
-            return <SlideItem ad={ad} key={idx} />;
+            return <SlideItem ad={ad} key={idx} img={img} />;
           })}
         </BoxList>
         <LeftArrow onClick={PrevSlide} isDisplay={isDisplay}>
@@ -94,7 +103,7 @@ export default Slider;
 
 const SlideDiv = styled.div`
   margin-top: 30px;
-  height: 300px;
+  height: 650px;
   width: 100%;
   background-color: black;
   color: white;
@@ -110,11 +119,14 @@ const SlideContent = styled.div`
   overflow: hidden;
   position: relative;
   height: 100%;
-  width: 900px;
+  width: 100%;
 `;
 
-const BoxList = styled.div`
+const BoxList = styled.ul`
+  list-style: none;
+  padding: 0;
   margin: 0 auto;
+  height: 100%;
   display: flex;
 `;
 
