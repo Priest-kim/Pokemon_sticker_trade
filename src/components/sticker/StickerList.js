@@ -105,6 +105,66 @@ const cardList = [
     img: "Dragonite",
     avgPrice: 5000,
   },
+  {
+    id: 18,
+    name: "Porygon",
+    img: "Porygon",
+    avgPrice: 2000,
+  },
+  {
+    id: 19,
+    name: "Starmie",
+    img: "Starmie",
+    avgPrice: 3400,
+  },
+  {
+    id: 20,
+    name: "Gloom",
+    img: "Gloom",
+    avgPrice: 5000,
+  },
+  {
+    id: 21,
+    name: "Farfetch'd",
+    img: "Farfetch'd",
+    avgPrice: 5000,
+  },
+  {
+    id: 22,
+    name: "Wartortle",
+    img: "Wartortle",
+    avgPrice: 7000,
+  },
+  {
+    id: 23,
+    name: "Venusaur",
+    img: "Venusaur",
+    avgPrice: 2000,
+  },
+  {
+    id: 24,
+    name: "Blastoise",
+    img: "Blastoise",
+    avgPrice: 3000,
+  },
+  {
+    id: 25,
+    name: "Tauros",
+    img: "Tauros",
+    avgPrice: 5000,
+  },
+  {
+    id: 26,
+    name: "Magnemite",
+    img: "Magnemite",
+    avgPrice: 1500,
+  },
+  {
+    id: 27,
+    name: "Snorlax",
+    img: "Snorlax",
+    avgPrice: 9000,
+  },
 ];
 
 const CadrList = () => {

@@ -104,6 +104,7 @@ const Nav = () => {
 export default Nav;
 
 const NavBar = styled.div`
+  height: 130px;
   background-color: #333333;
   display: flex;
   justify-content: space-around;
@@ -111,6 +112,7 @@ const NavBar = styled.div`
   padding: 12px;
   @media screen and (max-width: 1510px) {
     justify-content: space-between;
+    padding: 12px 60px;
   }
 `;
 const List = styled.li``;

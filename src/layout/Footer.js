@@ -38,11 +38,10 @@ const Footer = () => {
           <Infomation>
             상호명 : (주) Constto Company 대표 Jaden(김현빈)
             <br />
-            사업자 등록 번호 : XXX-XX-XXXXX | 통신판매업 신고번호 제 xxx-경기
-            안산시-xxxx호
+            사업자 등록 번호 : XXX-XX-XXXXX | 고객센터 070-0000-0000
             <br />
-            경기도 안산시 단원구 당곡로 8 진양빌딩 대표번호 000-0000-0000 <br />
-            Copright by Jaden
+            경기도 안산시 단원구 당곡로 8 진양빌딩 대표번호 070-0000-0000 <br />
+            😁Copright by Jaden😊
           </Infomation>
         </ContactArea>
       </FooterArea>
