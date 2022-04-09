@@ -1,15 +1,15 @@
 import Nav from "./layout/Nav";
 import SliderComponent from "./components/slide/Slider";
-import CadrList from "./components/card/CadrList";
+import StickerList from "./components/sticker/StickerList";
 import styled from "styled-components";
 
 function App() {
   return (
     <>
-      <Nav />
       <Wrapper>
+        <Nav />
         <SliderComponent />
-        <CadrList />
+        <StickerList />
       </Wrapper>
     </>
   );

@@ -73,9 +73,9 @@ const Slider = () => {
     slideRef.current.style.transform = `translateX(-${curSlide}00%)`;
   }, [curSlide]);
 
-  // useInterval(() => {
-  //   NextSlide();
-  // }, 3000);
+  useInterval(() => {
+    NextSlide();
+  }, 3000);
 
   return (
     <SlideDiv>
