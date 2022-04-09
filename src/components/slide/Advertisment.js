@@ -4,9 +4,9 @@ import styled from "styled-components";
 const SlideItem = ({ ad }) => {
   return (
     <Box>
-      {/* <img src={img} alt="shose" /> */}
       <div>
-        {ad.id + 1} <br />
+        {ad.id + 1}
+        <br />
         {ad.img}
       </div>
     </Box>
