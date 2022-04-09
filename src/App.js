@@ -2,6 +2,7 @@ import Nav from "./layout/Nav";
 import SliderComponent from "./components/slide/Slider";
 import StickerList from "./components/sticker/StickerList";
 import styled from "styled-components";
+import Footer from "./layout/Footer";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Nav />
         <SliderComponent />
         <StickerList />
+        <Footer />
       </Wrapper>
     </>
   );

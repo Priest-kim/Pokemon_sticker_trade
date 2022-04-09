@@ -81,6 +81,30 @@ const cardList = [
     img: "Sandshrew",
     avgPrice: 50000,
   },
+  {
+    id: 14,
+    name: "Charmander",
+    img: "Charmander",
+    avgPrice: 7000,
+  },
+  {
+    id: 15,
+    name: "Dratini",
+    img: "Dratini",
+    avgPrice: 6500,
+  },
+  {
+    id: 16,
+    name: "Vaporeon",
+    img: "Vaporeon",
+    avgPrice: 12000,
+  },
+  {
+    id: 17,
+    name: "Dragonite",
+    img: "Dragonite",
+    avgPrice: 5000,
+  },
 ];
 
 const CadrList = () => {
