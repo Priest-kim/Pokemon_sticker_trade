@@ -40,7 +40,7 @@ const Item = styled.div`
   border-radius: 10px;
   box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
 
-  @media screen and (max-width: 1660px) {
+  @media screen and (max-width: 1700px) {
     min-width: 300px;
     margin: 1rem;
   }
