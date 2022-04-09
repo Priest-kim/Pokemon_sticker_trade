@@ -39,7 +39,7 @@ const BuyButton = styled.a`
   &::before {
     content: "";
     position: absolute;
-    height: 100%;
+    height: 101%;
     width: 100%;
     background-color: ${(props) => props.color || "gold"};
     top: 100%;

@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import TradeButton from "../button/TradeButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWonSign } from "@fortawesome/free-solid-svg-icons";
 
 const Card = ({ card }) => {
   const path = `/img/sticker/${card.img}.png`;
@@ -16,7 +18,10 @@ const Card = ({ card }) => {
         <Iamge src={path} />
       </ImageArea>
       <NameTag>{card.name}</NameTag>
-      <PriceTag>Avg Price : {addComma(card.avgPrice)}</PriceTag>
+      <PriceTag>
+        Avg Price : <FontAwesomeIcon icon={faWonSign} color="green" />{" "}
+        {addComma(card.avgPrice)}
+      </PriceTag>
       <BtnArea>
         <TradeButton color={"#72ffa5"} content={"buy"} />
         <TradeButton color={"#ff9069"} content={"sell"} />
