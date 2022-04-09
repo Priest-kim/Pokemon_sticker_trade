@@ -109,7 +109,7 @@ const NavBar = styled.div`
   justify-content: space-around;
   align-items: center;
   padding: 12px;
-  @media screen and (max-width: 1550px) {
+  @media screen and (max-width: 1500px) {
     justify-content: space-between;
   }
 `;
@@ -118,7 +118,7 @@ const List = styled.li``;
 const Toggle = styled.div`
   display: none;
 
-  @media screen and (max-width: 1550px) {
+  @media screen and (max-width: 1500px) {
     display: flex;
   }
 `;
@@ -134,7 +134,7 @@ const TggleList = styled.ul`
     margin-top: 60px;
     margin-bottom: 60px;
   }
-  @media screen and (min-width: 1550px) {
+  @media screen and (min-width: 1500px) {
     display: none;
   }
 `;
@@ -145,7 +145,7 @@ const MenuList = styled.ul`
   justify-content: space-around;
   width: 50%;
   font-size: 20px;
-  @media screen and (max-width: 1550px) {
+  @media screen and (max-width: 1500px) {
     display: none;
   }
 `;

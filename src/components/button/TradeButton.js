@@ -8,17 +8,29 @@ const TradeButton = (props) => {
 export default TradeButton;
 
 const BuyButton = styled.a`
+  cursor: pointer;
+  width: 100%;
   padding: 2px 10px;
   border: 3px solid ${(props) => props.color || "gold"};
   background-color: transparent;
   font-size: 2rem;
+  font-weight: 1000;
   color: ${(props) => props.color || "gold"};
   text-transform: uppercase;
   letter-spacing: 5px;
   text-align: center;
   transition: all 0.4s;
   position: relative;
+  z-index: 1;
   overflow: hidden;
+
+  / &:first-child {
+    margin-right: 10px;
+  }
+
+  &:last-child {
+    margin-left: 10px;
+  }
 
   &:focus {
     outline: none;

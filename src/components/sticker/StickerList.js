@@ -52,9 +52,33 @@ const cardList = [
     avgPrice: 8000,
   },
   {
-    id: 1,
+    id: 9,
     name: "Mew",
     img: "Mew",
+    avgPrice: 50000,
+  },
+  {
+    id: 10,
+    name: "Eevee",
+    img: "Eevee",
+    avgPrice: 10000,
+  },
+  {
+    id: 11,
+    name: "Gengar",
+    img: "Gengar",
+    avgPrice: 9000,
+  },
+  {
+    id: 12,
+    name: "Mewtwo",
+    img: "Mewtwo",
+    avgPrice: 50000,
+  },
+  {
+    id: 13,
+    name: "Sandshrew",
+    img: "Sandshrew",
     avgPrice: 50000,
   },
 ];
