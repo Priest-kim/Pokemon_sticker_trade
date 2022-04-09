@@ -59,7 +59,7 @@ const FooterContainer = styled.div`
 
 const FooterArea = styled.div`
   width: 100%;
-  height: 500px;
+  height: 400px;
   position: absolute;
   background-color: #333333;
   display: flex;
@@ -90,18 +90,21 @@ const SocialIcons = styled.a`
 
 const Icon = styled.i`
   text-align: center;
-  width: 100%;
-  height: 100%;
+  width: 50px;
+  height: 50px;
   line-height: 60px;
 `;
 
 const ContactArea = styled.div`
+  display: flex;
+  justify-content: center;
   text-align: center;
   width: 50%;
   height: 100px;
   background-color: transparent;
 `;
 const Infomation = styled.p`
+  min-width: 700px;
   margin: 0;
   font-weight: 1000;
   font-size: 1.5rem;

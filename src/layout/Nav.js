@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faAppleWhole,
   faArrowRightToBracket,
   faAlignJustify,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
+import { faApple } from "@fortawesome/free-brands-svg-icons";
 
 const menuList = [
   {
@@ -47,7 +47,7 @@ const Nav = () => {
           <FontAwesomeIcon icon={faAlignJustify} size="2x" color="white" />
         </Toggle>
         <div>
-          <FontAwesomeIcon icon={faAppleWhole} size="2x" color="white" />
+          <FontAwesomeIcon icon={faApple} size="3x" color="white" />
         </div>
         <MenuList>
           {menuList.map((menu) => (
@@ -144,7 +144,7 @@ const MenuList = styled.ul`
   list-style: none;
   justify-content: space-around;
   width: 50%;
-  font-size: 20px;
+  font-size: 2rem;
   @media screen and (max-width: 1500px) {
     display: none;
   }
