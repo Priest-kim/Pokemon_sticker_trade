@@ -7,6 +7,7 @@ import {
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import { faApple } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 const menuList = [
   {
@@ -46,9 +47,9 @@ const Nav = () => {
         >
           <FontAwesomeIcon icon={faAlignJustify} size="2x" color="white" />
         </Toggle>
-        <div>
+        <Link to="/">
           <FontAwesomeIcon icon={faApple} size="3x" color="white" />
-        </div>
+        </Link>
         <MenuList>
           {menuList.map((menu) => (
             <List key={menu.id}>

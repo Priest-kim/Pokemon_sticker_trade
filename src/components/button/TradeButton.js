@@ -1,13 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const TradeButton = (props) => {
-  return <BuyButton color={props.color}>{props.content}</BuyButton>;
+  return (
+    <BuyButton to={`/${props.monster}/${props.content}`} color={props.color}>
+      {props.content}
+    </BuyButton>
+  );
 };
 
 export default TradeButton;
 
-const BuyButton = styled.a`
+const BuyButton = styled(Link)`
+  text-decoration: none;
   cursor: pointer;
   width: 100%;
   padding: 2px 10px;

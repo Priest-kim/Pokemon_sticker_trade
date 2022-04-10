@@ -52,6 +52,7 @@ const Footer = () => {
 export default Footer;
 
 const FooterContainer = styled.div`
+  margin-top: 30px;
   width: 100%;
   position: relative;
 `;

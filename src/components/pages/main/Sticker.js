@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import TradeButton from "../button/TradeButton";
+import TradeButton from "../../button/TradeButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWonSign } from "@fortawesome/free-solid-svg-icons";
 
-const Card = ({ card }) => {
-  const path = `/img/sticker/${card.img}.png`;
+const Card = ({ monster }) => {
+  const path = `/img/sticker/${monster.eng}.png`;
 
   const addComma = (num) => {
     var regexp = /\B(?=(\d{3})+(?!\d))/g;
@@ -17,14 +17,15 @@ const Card = ({ card }) => {
       <ImageArea>
         <Iamge src={path} />
       </ImageArea>
-      <NameTag>{card.name}</NameTag>
+      <NameTag>{monster.eng}</NameTag>
       <PriceTag>
         Avg Price : <FontAwesomeIcon icon={faWonSign} color="green" />{" "}
-        {addComma(card.avgPrice)}
+        {addComma(monster.price)}
       </PriceTag>
       <BtnArea>
-        <TradeButton color={"#72ffa5"} content={"buy"} />
-        <TradeButton color={"#ff9069"} content={"sell"} />
+        <TradeButton monster={monster.eng} color={"#72ffa5"} content={"buy"} />
+
+        <TradeButton monster={monster.eng} color={"#ff9069"} content={"sell"} />
       </BtnArea>
     </Item>
   );
