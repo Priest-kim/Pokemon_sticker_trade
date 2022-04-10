@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import TradeButton from "../../button/TradeButton";
+import VerticalsButton from "../../button/VerticalsButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWonSign } from "@fortawesome/free-solid-svg-icons";
 
@@ -19,13 +19,12 @@ const Card = ({ monster }) => {
       </ImageArea>
       <NameTag>{monster.eng}</NameTag>
       <PriceTag>
-        Avg Price : <FontAwesomeIcon icon={faWonSign} color="green" />{" "}
+        Avg Price : <FontAwesomeIcon icon={faWonSign} color="green" />
         {addComma(monster.price)}
       </PriceTag>
       <BtnArea>
-        <TradeButton monster={monster.eng} color={"#72ffa5"} content={"buy"} />
-
-        <TradeButton monster={monster.eng} color={"#ff9069"} content={"sell"} />
+        <VerticalsButton id={monster.id} color={"#72ffa5"} content={"buy"} />
+        <VerticalsButton id={monster.id} color={"#ff9069"} content={"sell"} />
       </BtnArea>
     </Item>
   );

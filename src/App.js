@@ -16,10 +16,10 @@ function App() {
           <Route exact path="/">
             <StickerList />
           </Route>
-          <Route path="/:monster/buy">
+          <Route path="/pokemon/:id">
             <Detail />
           </Route>
-          <Route path="/:monster/sell">
+          <Route path="/">
             <Detail />
           </Route>
         </Switch>

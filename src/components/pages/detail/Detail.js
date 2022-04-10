@@ -1,33 +1,113 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import Title from "../../../layout/Title";
+import HorizontalButton from "../../button/HorizontalButton";
+
+const typeColor = [
+  {
+    type: "Bug",
+    "background-color": "#ffdf75",
+  },
+  {
+    type: "Water",
+    "background-color": "#89c9ff",
+  },
+  {
+    type: "Fire",
+    "background-color": "#ff7783",
+  },
+  {
+    type: "Flying",
+    "background-color": "#d8c8ff",
+  },
+  {
+    type: "Poison",
+    "background-color": "#8e59ff",
+  },
+  {
+    type: "Grass",
+    "background-color": "#aaffbf",
+  },
+  {
+    type: "Normal",
+    "background-color": "#ffffe3",
+  },
+  {
+    type: "Electric",
+    "background-color": "#fffb28",
+  },
+];
 
 const Detail = () => {
+  const { id } = useParams();
+  const [monster, setMonster] = useState({
+    id: -1,
+    eng: "unknown",
+    kor: "unknown",
+    type: ["Normal"],
+    path: "/img/sticker/unknown.png",
+    desc: "unknown",
+    price: 1500,
+  });
+  const { eng, kor, type, path, desc, price, num } = monster;
+
+  useEffect(() => {
+    fetch(`http://localhost:3002/monster?id=${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setMonster(data[0]);
+      });
+  }, [id]);
+
+  const makeTitle = () => {
+    return eng ? `📜 ${eng}` : "something wrong!!💀☠️👻";
+  };
+
+  const matchColor = (type) => {
+    const result = typeColor.filter((item) => item.type === type);
+
+    return result[0];
+  };
+  const addComma = (num) => {
+    var regexp = /\B(?=(\d{3})+(?!\d))/g;
+    return num.toString().replace(regexp, ",");
+  };
   return (
-    <Wrapper>
-      <MonsterImageArea></MonsterImageArea>
-      <MonsterInfomationArea>
-        <MainTitleBox>
-          <p>영어 이름</p>
-          <p>한글 이름</p>
-        </MainTitleBox>
-        <ButtonArea></ButtonArea>
-        <MonsterDetailArea>
-          <p>타입 : </p>
-          <p>
-            Bulbasaur is a small, quadrupedal amphibian Pokémon that has
-            blue-green skin with darker patches. It has red eyes with white
-            pupils, pointed, ear-like structures on top of its head, and a
-            short, blunt snout with a wide mouth. A pair of small, pointed teeth
-            are visible in the upper jaw when its mouth is open. Each of its
-            thick legs ends with three sharp claws. On Bulbasaur's back is a
-            green plant bulb, which is grown from a seed planted there at birth.
-            The bulb also conceals two slender, tentacle-like vines and provides
-            it with energy through photosynthesis as well as from the
-            nutrient-rich seeds contained within.
-          </p>
-        </MonsterDetailArea>
-      </MonsterInfomationArea>
-    </Wrapper>
+    <>
+      <Title content={makeTitle()} />
+      <Wrapper>
+        <MonsterImageArea>
+          <Iamge src={path} />
+        </MonsterImageArea>
+        <MonsterInfomationArea>
+          <MainTitleBox>
+            <p>
+              🎈{num} - {eng}
+            </p>
+            <p>{kor}</p>
+          </MainTitleBox>
+          <ButtonArea>
+            <HorizontalButton
+              color={"lightgreen"}
+              content={`Lowest Price : ${addComma(price)}`}
+            />
+            <HorizontalButton color={"#ff9d9e"} content={"문의하기"} />
+          </ButtonArea>
+          <MonsterDetailArea>
+            <div>
+              Type :
+              {type.map((item, idx) => (
+                <Type key={idx} color={matchColor(item, idx)}>
+                  {item}
+                </Type>
+              ))}
+            </div>
+            <p>{desc}</p>
+          </MonsterDetailArea>
+        </MonsterInfomationArea>
+      </Wrapper>
+    </>
   );
 };
 
@@ -37,34 +117,27 @@ const Wrapper = styled.div`
   margin: 30px 0;
   width: 100%;
   height: 800px;
-  background-color: lightgreen;
+  background-color: #ecf0f3;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 `;
-
-// const MonsterEncyclopedia = styled.div`
-//   display: flex;
-//   width: 100%;
-//   height: px;
-//   background-color: lightsteelblue;
-//   align-items: center;
-// `;
-
 const MonsterImageArea = styled.div`
   height: 500px;
   width: 500px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ecf0f3;
+  background-color: transparent;
   border-radius: 20px;
+  box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
 `;
 
 const MonsterInfomationArea = styled.div`
   display: flex;
   width: 60%;
   height: 100%;
-  background-color: red;
+  background-color: transparent;
   flex-direction: column;
 `;
 
@@ -79,19 +152,38 @@ const MainTitleBox = styled.div`
 `;
 
 const ButtonArea = styled.div`
-  background-color: lightseagreen;
   height: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 `;
 
 const MonsterDetailArea = styled.div`
   padding: 60px 30px;
-  background-color: lightsalmon;
   height: 100%;
-  text-align: center;
-  p:first-child {
+
+  div:first-child {
+    font-weight: 1000;
+    display: flex;
     font-size: 2rem;
+    margin: 0 45px;
   }
   p:last-child {
+    padding-left: 40px;
     font-size: 1.5em;
   }
+`;
+
+const Type = styled.div`
+  height: 100%;
+  padding: 3px 15px;
+  border-radius: 10px;
+  ${({ color }) => color};
+`;
+
+const Iamge = styled.img`
+  height: 80%;
+  width: 80%;
 `;

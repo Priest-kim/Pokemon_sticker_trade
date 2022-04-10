@@ -47,6 +47,7 @@ const Slider = () => {
   const NextSlide = () => {
     if (curSlide >= TOTAL_SLIDES) {
       // 현재 슬라이드가 마지막 슬라이드면
+
       setCurSlide(0); // 처음으로
     } else {
       // 현재 슬라이드가 마지막 슬라이드가 아니면

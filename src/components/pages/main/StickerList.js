@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import Title from "../../../layout/Title";
 import Sticker from "./Sticker";
 
 const CadrList = () => {
@@ -9,11 +10,11 @@ const CadrList = () => {
     fetch("http://localhost:3002/monster")
       .then((res) => res.json())
       .then((data) => setMonsters(data));
-  });
+  }, []);
 
   return (
     <Wrapper>
-      <Title>welcome to the pokemon trade conter 👌</Title>
+      <Title content={"welcome to the pokemon trade conter 👌"} />
       <Container>
         {monsters.map((monster, idx) => (
           <Sticker key={idx} monster={monster} />
@@ -35,12 +36,4 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   justify-content: center;
-`;
-
-const Title = styled.h1`
-  text-align: center;
-  font-size: 4rem;
-  font-weight: bolder;
-  letter-spacing: 5px;
-  text-transform: uppercase;
 `;

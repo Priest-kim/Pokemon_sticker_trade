@@ -2,21 +2,22 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const TradeButton = (props) => {
+const ChatButton = (props) => {
   return (
-    <BuyButton to={`/${props.monster}/${props.content}`} color={props.color}>
+    <Button to={"/"} color={props.color}>
       {props.content}
-    </BuyButton>
+    </Button>
   );
 };
 
-export default TradeButton;
+export default ChatButton;
 
-const BuyButton = styled(Link)`
+const Button = styled(Link)`
   text-decoration: none;
+  border-radius: 15px;
   cursor: pointer;
-  width: 100%;
-  padding: 2px 10px;
+  width: 50%;
+  padding: 20px 10px;
   border: 3px solid ${(props) => props.color || "gold"};
   background-color: transparent;
   font-size: 2rem;
@@ -25,7 +26,7 @@ const BuyButton = styled(Link)`
   text-transform: uppercase;
   letter-spacing: 5px;
   text-align: center;
-  transition: all 0.4s;
+  transition: all 1s;
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -48,14 +49,14 @@ const BuyButton = styled(Link)`
     height: 101%;
     width: 100%;
     background-color: ${(props) => props.color || "gold"};
-    top: 100%;
-    left: 0;
-    transition: all 0.4s;
+    top: 0;
+    left: 100%;
+    transition: all 1s;
     z-index: -1;
   }
 
   &:hover::before {
-    transform: translateY(-100%);
+    transform: translateX(-100%);
   }
 
   &:hover {
