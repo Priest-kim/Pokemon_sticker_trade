@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-const Title = (props) => {
-  return <MainTitle>{props.content}</MainTitle>;
+const Title = ({ content }) => {
+  return <MainTitle>{content}</MainTitle>;
 };
 
 export default Title;

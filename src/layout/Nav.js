@@ -51,9 +51,9 @@ const Nav = () => {
           <FontAwesomeIcon icon={faApple} size="3x" color="white" />
         </Link>
         <MenuList>
-          {menuList.map((menu) => (
-            <List key={menu.id}>
-              <Item href="/#">{menu.name}</Item>
+          {menuList.map(({ id, name }) => (
+            <List key={id}>
+              <Item href="/#">{name}</Item>
             </List>
           ))}
         </MenuList>
@@ -77,19 +77,19 @@ const Nav = () => {
             </Img>
             <Input type="text" placeholder="search" />
           </Search>
-          {menuList.map((menu) => (
-            <List key={menu.id}>
+          {menuList.map(({ id, name }) => (
+            <List key={id}>
               <Item href="/#" fontSize="30px">
-                {menu.name}
+                {name}
               </Item>
               <hr />
             </List>
           ))}
           <Contact>Contact me</Contact>
-          {toggleList.map((item) => (
-            <List key={item.id}>
+          {toggleList.map(({ id, name }) => (
+            <List key={id}>
               <Item href="/#" fontSize="30px">
-                {item.name}
+                {name}
               </Item>
               <hr />
             </List>

@@ -97,9 +97,9 @@ const Detail = () => {
           <MonsterDetailArea>
             <div>
               Type :
-              {type.map((item, idx) => (
-                <Type key={idx} color={matchColor(item, idx)}>
-                  {item}
+              {type.map((type, idx) => (
+                <Type key={idx} color={matchColor(type)}>
+                  {type}
                 </Type>
               ))}
             </div>
