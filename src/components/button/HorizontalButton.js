@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const ChatButton = (props) => {
+const ChatButton = ({ color, content }) => {
   return (
-    <Button to={"/"} color={props.color}>
-      {props.content}
+    <Button to={"/"} color={color}>
+      {content}
     </Button>
   );
 };
@@ -18,11 +18,11 @@ const Button = styled(Link)`
   cursor: pointer;
   width: 50%;
   padding: 20px 10px;
-  border: 3px solid ${(props) => props.color || "gold"};
+  border: 3px solid ${({ color }) => color || "gold"};
   background-color: transparent;
   font-size: 2rem;
   font-weight: 1000;
-  color: ${(props) => props.color || "gold"};
+  color: ${({ color }) => color || "gold"};
   text-transform: uppercase;
   letter-spacing: 5px;
   text-align: center;
@@ -48,7 +48,7 @@ const Button = styled(Link)`
     position: absolute;
     height: 101%;
     width: 100%;
-    background-color: ${(props) => props.color || "gold"};
+    background-color: ${({ color }) => color || "gold"};
     top: 0;
     left: 100%;
     transition: all 1s;

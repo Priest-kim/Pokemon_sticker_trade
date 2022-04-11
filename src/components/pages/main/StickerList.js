@@ -5,7 +5,6 @@ import Sticker from "./Sticker";
 
 const CadrList = () => {
   const [monsters, setMonsters] = useState([]);
-
   useEffect(() => {
     fetch("http://localhost:3002/monster")
       .then((res) => res.json())

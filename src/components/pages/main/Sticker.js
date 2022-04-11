@@ -5,8 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWonSign } from "@fortawesome/free-solid-svg-icons";
 
 const Card = ({ monster }) => {
-  const path = `/img/sticker/${monster.eng}.png`;
-
+  const { price, id, path, eng } = monster;
   const addComma = (num) => {
     var regexp = /\B(?=(\d{3})+(?!\d))/g;
     return num.toString().replace(regexp, ",");
@@ -17,14 +16,14 @@ const Card = ({ monster }) => {
       <ImageArea>
         <Iamge src={path} />
       </ImageArea>
-      <NameTag>{monster.eng}</NameTag>
+      <NameTag>{eng}</NameTag>
       <PriceTag>
         Avg Price : <FontAwesomeIcon icon={faWonSign} color="green" />
-        {addComma(monster.price)}
+        {addComma(price)}
       </PriceTag>
       <BtnArea>
-        <VerticalsButton id={monster.id} color={"#72ffa5"} content={"buy"} />
-        <VerticalsButton id={monster.id} color={"#ff9069"} content={"sell"} />
+        <VerticalsButton id={id} color={"#72ffa5"} content={"buy"} />
+        <VerticalsButton id={id} color={"#ff9069"} content={"sell"} />
       </BtnArea>
     </Item>
   );

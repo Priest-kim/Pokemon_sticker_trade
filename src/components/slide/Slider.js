@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import React, { useEffect, useRef, useState } from "react";
 import SlideItem from "./Advertisment";
-import img from "./../../images/1.png";
 import useInterval from "../../hooks/useInterval";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,28 +11,28 @@ import {
 const adList = [
   {
     id: 0,
-    img: "Constto",
-    path: "1",
+    conpany: "Constto",
+    path: "/ad/shoes.png",
   },
   {
     id: 1,
-    img: "Benedicta",
-    path: "1",
+    conpany: "Benedicta",
+    path: "/ad/shoes.png",
   },
   {
     id: 2,
-    img: "Slime",
-    path: "1",
+    conpany: "Slime",
+    path: "/ad/shoes.png",
   },
   {
     id: 3,
-    img: "CocaCola",
-    path: "1",
+    conpany: "CocaCola",
+    path: "/ad/shoes.png",
   },
   {
     id: 4,
-    img: "King of Mongta",
-    path: "1",
+    conpany: "King of Mongta",
+    path: "/ad/shoes.png",
   },
 ];
 
@@ -89,7 +88,7 @@ const Slider = () => {
         </RightArrow>
         <BoxList ref={slideRef}>
           {adList.map((ad, idx) => {
-            return <SlideItem ad={ad} key={idx} img={img} />;
+            return <SlideItem ad={ad} key={idx} />;
           })}
         </BoxList>
         <LeftArrow onClick={PrevSlide} isDisplay={isDisplay}>

@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-const SlideItem = ({ ad, img }) => {
+const SlideItem = ({ ad }) => {
+  const { conpany, path } = ad;
+  console.log(path);
   return (
     <Box>
-      {ad.img}
+      {conpany}
       <br />
-      <img src={img} alt="shoes" />
+      <img src={path} alt="shoes" />
     </Box>
   );
 };
