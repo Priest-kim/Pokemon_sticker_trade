@@ -41,7 +41,7 @@ const Footer = () => {
             사업자 등록 번호 : XXX-XX-XXXXX | 고객센터 070-000-0000
             <br />
             경기도 안산시 단원구 당곡로 8 진양빌딩 대표번호 070-0000-0000 <br />
-            😁Copright by Jaden😊
+            😁Copyright by Jaden😊
           </Infomation>
         </ContactArea>
       </FooterArea>

@@ -46,7 +46,7 @@ const Detail = () => {
     eng: "unknown",
     kor: "unknown",
     type: ["Normal"],
-    path: "/img/sticker/unknown.png",
+    path: "",
     desc: "unknown",
     price: 1500,
   });
@@ -70,15 +70,16 @@ const Detail = () => {
     return result[0];
   };
   const addComma = (num) => {
-    var regexp = /\B(?=(\d{3})+(?!\d))/g;
+    let regexp = /\B(?=(\d{3})+(?!\d))/g;
     return num.toString().replace(regexp, ",");
   };
+
   return (
     <>
       <Title content={makeTitle()} />
       <Wrapper>
         <MonsterImageArea>
-          <Iamge src={path} />
+          <Image src={path} />
         </MonsterImageArea>
         <MonsterInfomationArea>
           <MainTitleBox>
@@ -183,7 +184,7 @@ const Type = styled.div`
   ${({ color }) => color};
 `;
 
-const Iamge = styled.img`
+const Image = styled.img`
   height: 80%;
   width: 80%;
 `;

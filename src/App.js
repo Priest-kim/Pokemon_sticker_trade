@@ -32,5 +32,8 @@ function App() {
 export default App;
 
 const Wrapper = styled.div`
+  position: relative;
+  background: url("/ad/note2.jpg");
+  background-size: cover;
   padding: 0px 20rem;
 `;

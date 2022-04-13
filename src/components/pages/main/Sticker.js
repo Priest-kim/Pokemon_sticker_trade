@@ -7,7 +7,7 @@ import { faWonSign } from "@fortawesome/free-solid-svg-icons";
 const Card = ({ monster }) => {
   const { price, id, path, eng } = monster;
   const addComma = (num) => {
-    var regexp = /\B(?=(\d{3})+(?!\d))/g;
+    let regexp = /\B(?=(\d{3})+(?!\d))/g;
     return num.toString().replace(regexp, ",");
   };
 
@@ -40,9 +40,9 @@ const Item = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #ecf0f3;
-  border-radius: 10px;
-  box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+  /* background-color: #ecf0f3; */
+  /* border-radius: 10px;
+  box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1; */
 
   @media screen and (max-width: 1700px) {
     min-width: 300px;
@@ -55,8 +55,6 @@ const ImageArea = styled.div`
   width: 200px;
   align-items: center;
   justify-content: center;
-  background-color: #ecf0f3;
-  border-radius: 10px;
 `;
 
 const Iamge = styled.img`
