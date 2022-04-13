@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-const SlideItem = ({ advertisment }) => {
-  const { conpany, path } = advertisment;
+const SlideItem = ({ ad }) => {
+  const { conpany, path } = ad;
   console.log(path);
   return (
     <Box>
