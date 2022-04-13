@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const SlideItem = ({ ad }) => {
   const { conpany, path } = ad;
-  console.log(path);
   return (
     <Box>
       {conpany}
