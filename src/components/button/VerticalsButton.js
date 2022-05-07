@@ -45,7 +45,7 @@ const BuyButton = styled(Link)`
   &::before {
     content: "";
     position: absolute;
-    height: 100%;
+    height: 101%;
     width: 100%;
     background-color: ${({ color }) => color || "gold"};
     top: 100%;
