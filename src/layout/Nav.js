@@ -49,7 +49,6 @@ const Nav = () => {
         </Toggle>
         <Link to="/">
           <FontAwesomeIcon icon={faApple} size="3x" color="white" />
-          {/* <img src="/img/sticker/unkown.png" alt="asdfasd" /> */}
         </Link>
         <MenuList>
           {menuList.map(({ id, name }) => (
